@@ -4,6 +4,7 @@ const button = document.getElementById('button')
 const input = document.getElementById('kilometers')
 const select = document.getElementById('età')
 document.getElementById=('paragraph')
+const message=('Il prezzo del biglietto è : ')
 
 //MAIN LOGICS
 button.addEventListener('click', function(){
@@ -12,8 +13,16 @@ button.addEventListener('click', function(){
  console.log('Prezzo biglietto', basePrice)
  console.log('Prezzo biglietto minorenni', ticketPriceMinors.toFixed(2))
  console.log('Prezzo biglietto over65', ticketPriceOver65.toFixed(2))
- if(select.value == 'Minorenne'){
+    if(select.value == 'Minorenne'){
         paragraph.innerText= `${message} ${ticketPriceMinors.toFixed(2)}€`
+        console.log(paragraph)
+    }
+    else if(select.value == 'Over 65'){
+        paragraph.innerText= `${message} ${ticketPriceOver65.toFixed(2)}€`
+        console.log(paragraph)
+    }
+    else{
+        paragraph.innerText= `${message} + ${basePrice}`
         console.log(paragraph)
     }
 });
@@ -30,9 +39,10 @@ const ticketPriceOver65= basePrice - (basePrice / 100 * 40);
 
 // Prendiamo l'elemento nell'html//
 document.getElementById=('paragraph')
+// paragraph.innerText= `${message} + ${basePrice}`
 
 // Costruisco il messaggio passeggeri compresi tra i 18 e i 65 anni di età//
-const message=('Il prezzo del biglietto è : ')
+// const message=('Il prezzo del biglietto è : ')
 // paragraph.innerText= `${message} ${basePrice.toFixed(2)}€`
 // Messaggio per passeggeri minorenni//
 // if(select.value < 18){
