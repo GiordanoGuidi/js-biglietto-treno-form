@@ -1,0 +1,25 @@
+/*CSS RESER*/
+ 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*GENERICS*/
+body{
+    background-color: #B91550;
+}
+
+/*UTILS*/
+.c-red{
+    color: #B91550;
+}
+
+.b-red{
+    border-color: #B91550 ;
+}
+
+table{
+    border-bottom: 2px solid #808080;
+    border-top: 2px solid #808080;
+}
