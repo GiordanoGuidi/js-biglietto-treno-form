@@ -3,17 +3,17 @@ console.log('JS OK')
 
 // Form ELEMENTS
 const kmsField = document.getElementById('kms')
-console.log(kms)
-const ageFiled = document.getElementById('age')
-console.log(age)
+console.log(kmsField)
+const ageField = document.getElementById('age')
+console.log(ageField)
 const nameField = document.getElementById('name');
-console.log(userName)
+console.log(nameField)
 
 // / Prendiamo i Buttons
 const confirmButton = document.getElementById('confirm-button')
-console.log('mi hai cliccato',confirmButton)
+console.log(confirmButton)
 const resetButton = document.getElementById('reset-button')
-console.log('mi hai cliccato',resetButton)
+console.log(resetButton)
 
 // Iniziamo a creare il messaggio
 const message=('Il prezzo del biglietto è : ')
@@ -30,43 +30,14 @@ const priceElement= document.getElementById('price')
 
 //VARIABILI INIZIALI
 const kilometersPrice = 0.21
-console.log(kilometersPrice)
 let rateName = 'Tariffa Ordinaria'
 
-
-
-// Calcoliamo il prezzo base
-const basePrice = kilometersPrice * inputKilometers.value
-console.log(basePrice)
-
-// Calcoliamo il prezzo del biglietto per i minorenni//
-const ticketPriceMinors = basePrice - (basePrice / 100 * 20);
-
-// Calcoliamo il prezzo del biglietto per gli over 65//
-const ticketPriceOver65= basePrice - (basePrice / 100 * 40);
-
-
-//MAIN LOGICS
-// generates.addEventListener('click', function(){
- 
-//  console.log('kilometri percorsi',parseInt(inputKilometers.value))
-//  console.log('età', select.value)
-//  console.log('Prezzo biglietto', basePrice)
-//  console.log('Prezzo biglietto minorenni', ticketPriceMinors.toFixed(2))
-//  console.log('Prezzo biglietto over65', ticketPriceOver65.toFixed(2))
-
-//     if(select.value == 'Minorenne'){
-//         result.innerText = `${message} ${ticketPriceMinors.toFixed(2)}€`
-//         console.log(paragraph)
-//     }
-//     else if(select.value == 'Over 65'){
-//         result.innerText = `${message} ${ticketPriceOver65.toFixed(2)}€`
-//         console.log(paragraph)
-//     }
-//     else{
-//         result.innerText = `${message} + ${basePrice}`
-//         console.log(paragraph)
-//     }
-// });
+//EVENT LISTNER
+confirmButton.addEventListener('click', function(){
+    //RECUPERO I VALORI DAL FORM
+    const nameValue= nameField.value.trim();
+    const kmsValue = parseInt(kmsField.value);
+    const ageValue = ageField.value;
+})
 
 
