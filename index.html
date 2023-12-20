@@ -14,74 +14,73 @@
 
 </head>
 <body>
-    <div class="container text-center">
+    <!--FORM SECTION-->
+    <section id="form-section" class="container text-center">
         <h1 class="text-white">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
         <div class="card w-100 ">
             <div class="card-body">
                 <form class="text-center">
                     <div class="d-flex justify-content-center gap-5 mb-5">
                         <div class="mb-3 me-5">
-                            <label for="exampleInputEmail1" class="form-label c-red">Nome Cognome</label>
-                            <input type="email" class="form-control b-red" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome Cognome">
+                            <label for="name" class="form-label c-red">Nome Cognome</label>
+                            <input type="text" class="form-control b-red" id="name" placeholder="Nome Cognome">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label c-red">Km da percorrere</label>
-                            <input type="password" class="form-control b-red" id="exampleInputPassword1" placeholder="km da percorrere">
+                            <label for="kms" class="form-label c-red">Km da percorrere</label>
+                            <input type="number" class="form-control b-red" id="kms" placeholder="km da percorrere">
                         </div>
                         <div class="mb-3 ms-5">
-                            <label for="" class="form-label c-red">Fascia d'età</label>
-                            <select class="form-select b-red" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
+                            <label for="age" class="form-label c-red">Fascia d'età</label>
+                            <select class="form-select b-red"  id="age">
+                                <option selected value="">Adulto</option>
                                 <option value="Minorenne">Minorenne</option>
-                                <option value="Maggiorenne">Maggiorenne</option>
                                 <option value="Over 65">Over 65</option>
                               </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn bg-secondary bg-opacity-50 me-3 c-red fw-bold fs-5">Genera</button>
-                    <button type="submit" class="btn bg-secondary bg-opacity-50 c-red fw-bold fs-5">Annulla</button>
+                    <button type="button" id="confirm-button" class="btn bg-secondary bg-opacity-50 me-3 c-red fw-bold fs-5">Genera</button>
+                    <button type="button" id="reset-button" class="btn bg-secondary bg-opacity-50 c-red fw-bold fs-5">Annulla</button>
                 </form>
             </div>
         </div>
+    </section>
+    <!--TICKET SECTION-->
+    <section id="ticket-section" class="container">
         <h1 class="text-white mt-5">IL TUO BIGLIETTO</h1>
-        <div class="card w-100 rounded-0">
-            <div class="card-body">
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                          <th>NOME PASSEGGERO</th>
-                          <th>First</th>
-                          <th>Last</th>
-                          <th>Handle</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td colspan="2">Larry the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                  </table>
-              
+        <div class="card mb-3 rounded-0">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://sacromontedivarallo.com/wp-content/uploads/2019/12/EW0A6471.jpg" class="img-fluid rounded-start" alt="Train Ticket">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title text-start mb-4">Il tuo boiglietto</h5>
+                        <h4 id="passenger-name" class="text-start mb-4">Giordano Guidi</h4>
+                        <div class="row row-cols-1 row-cols-4">
+                            <div class="col">
+                                <h6>Offerta</h6>
+                                <div id="rate">Tariffa ordinaria</div>
+                            </div>
+
+                            <div class="col">
+                                <h6>Carrozza</h6>
+                                <div id="car">8</div>
+                            </div>
+
+                            <div class="col">
+                                <h6>Codice CP</h6>
+                                <div id="pnr">58943</div>
+                            </div>
+
+                            <div class="col">
+                                <h6>Totale</h6>
+                                <div id="price">€ 10</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-         
-
-        
-    </div>
+        </div>
+    </section>
 </body>
 </html>
