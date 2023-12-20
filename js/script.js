@@ -21,7 +21,7 @@ const priceElement= document.getElementById('price')
 
 //VARIABILI INIZIALI
 const pricePerKms = 0.21
-let rateName = 'Tariffa Ordinaria'
+let rateName = 'Tariffa Ordinaria';
 
 //EVENT LISTNER
 confirmButton.addEventListener('click', function(){
@@ -29,8 +29,22 @@ confirmButton.addEventListener('click', function(){
     const nameValue = nameField.value.trim();
     const kmsValue = parseInt(kmsField.value);
     const ageValue = ageField.value;
-    console.log(nameValue, kmsValue, ageValue)
 
+
+    //! VALIDAZIONE
+    if(! nameValue || isNaN (kms) || kms < 1){
+        alert('Ci sono errori nel form');
+        return;
+    }
+
+    // SVUOTO I CAMPI
+    resetButton.addEventListener('click', function(){
+        ticketSection.classList.add('d-none');
+        nameField.value = '';
+        kmsField.value = '';
+    });
+       
+    
     //CALCOLO IL PREZZO BASE
     let price = pricePerKms * kmsValue;
 
@@ -42,9 +56,25 @@ confirmButton.addEventListener('click', function(){
     } else if(ageValue === 'Over 65'){
         rateName = 'Tariffa Senior';
         price = price - ( price / 100 * 40)
-
-        console.log(price, rateName)
     }
+    console.log(price, rateName)
+
+    // NUMERO DI CARROZZA RANDOMIZZATO 
+    const car = Math.floor(Math.random() * 10)
+
+    // NUMERO DEL BIGLIETTO RANDOMIZZATO
+    const pnr = Math.floor(Math.random() * (100000 - 90000) + 90000) 
+    console.log(car, pnr)
+
+    //MONTIAMO I DATI NEL BIGLIETTO
+     passengerElement.innerText= nameValue;
+     rateElement.innerText= rateName;
+     carElement.innerText=  car;
+     pnrElement.innerText=  pnr;
+     priceElement.innerText= '€ ' + price.toFixed(2);
+
+     // MOSTRIAMO IL BIGLIETTO
+     ticketSection.classList.remove('d-none')
 })
 
 
