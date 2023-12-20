@@ -3,21 +3,12 @@ console.log('JS OK')
 
 // Form ELEMENTS
 const kmsField = document.getElementById('kms')
-console.log(kmsField)
 const ageField = document.getElementById('age')
-console.log(ageField)
 const nameField = document.getElementById('name');
-console.log(nameField)
 
 // / Prendiamo i Buttons
 const confirmButton = document.getElementById('confirm-button')
-console.log(confirmButton)
 const resetButton = document.getElementById('reset-button')
-console.log(resetButton)
-
-// Iniziamo a creare il messaggio
-const message=('Il prezzo del biglietto è : ')
-// console.log(message)
 
 
 // TICKET ELEMENTS
@@ -29,15 +20,31 @@ const pnrElement= document.getElementById('pnr')
 const priceElement= document.getElementById('price')
 
 //VARIABILI INIZIALI
-const kilometersPrice = 0.21
+const pricePerKms = 0.21
 let rateName = 'Tariffa Ordinaria'
 
 //EVENT LISTNER
 confirmButton.addEventListener('click', function(){
     //RECUPERO I VALORI DAL FORM
-    const nameValue= nameField.value.trim();
+    const nameValue = nameField.value.trim();
     const kmsValue = parseInt(kmsField.value);
     const ageValue = ageField.value;
+    console.log(nameValue, kmsValue, ageValue)
+
+    //CALCOLO IL PREZZO BASE
+    let price = pricePerKms * kmsValue;
+
+    //CALCOLO UN EVENTUALE SCONTO
+     
+    if(ageValue === 'minorenne'){
+        rateName = 'Tariffa Under 18';
+        price = price - ( price / 100 * 20)
+    } else if(ageValue === 'Over 65'){
+        rateName = 'Tariffa Senior';
+        price = price - ( price / 100 * 40)
+
+        console.log(price, rateName)
+    }
 })
 
 
