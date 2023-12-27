@@ -10,7 +10,6 @@ const nameField = document.getElementById('name');
 const confirmButton = document.getElementById('confirm-button')
 const resetButton = document.getElementById('reset-button')
 
-
 // TICKET ELEMENTS
 const ticketSection= document.getElementById('ticket-section')
 const passengerElement= document.getElementById('passenger-name')
@@ -32,7 +31,7 @@ confirmButton.addEventListener('click', function(){
 
 
     //! VALIDAZIONE
-    if(! nameValue || isNaN (kms) || kms < 1){
+    if(!isNaN(nameValue) || isNaN (kmsValue) || kms < 1){
         alert('Ci sono errori nel form');
         return;
     }
