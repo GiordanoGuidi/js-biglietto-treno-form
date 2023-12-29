@@ -23,11 +23,11 @@
                     <div class="d-flex justify-content-center gap-5 mb-5">
                         <div class="mb-3 me-5">
                             <label for="name" class="form-label c-red">Nome Cognome</label>
-                            <input type="text" class="form-control b-red" id="name" placeholder="Nome Cognome">
+                            <input type="text" class="form-control b-red" id="name" placeholder="Nome Cognome" value="Giordano Guidi">
                         </div>
                         <div class="mb-3">
                             <label for="kms" class="form-label c-red">Km da percorrere</label>
-                            <input type="number" class="form-control b-red" id="kms" placeholder="km da percorrere">
+                            <input type="number" class="form-control b-red" id="kms" placeholder="km da percorrere" value="50">
                         </div>
                         <div class="mb-3 ms-5">
                             <label for="age" class="form-label c-red">Fascia d'età</label>
@@ -40,6 +40,9 @@
                     </div>
                     <button type="button" id="confirm-button" class="btn bg-secondary bg-opacity-50 me-3 c-red fw-bold fs-5">Genera</button>
                     <button type="button" id="reset-button" class="btn bg-secondary bg-opacity-50 c-red fw-bold fs-5">Annulla</button>
+                    <div class="alert alert-success mt-4 d-none" role="alert">
+                        Complimenti! Acquisto avvenuto con successo
+                    </div>
                 </form>
             </div>
         </div>
@@ -52,7 +55,7 @@
                 <div class="col-md-4">
                     <img src="https://sacromontedivarallo.com/wp-content/uploads/2019/12/EW0A6471.jpg" class="img-fluid rounded-start" alt="Train Ticket">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 position-relative">
                     <div class="card-body">
                         <h5 class="card-title text-start mb-4">Il tuo boiglietto</h5>
                         <h4 id="passenger-name" class="text-start mb-4"></h4>
@@ -76,6 +79,7 @@
                                 <h6>Totale</h6>
                                 <div id="price"></div>
                             </div>
+                            <button type="button" class="btn btn-success mt-4 button-purchase">Aquista biglietto</button>
                         </div>
                     </div>
                 </div>

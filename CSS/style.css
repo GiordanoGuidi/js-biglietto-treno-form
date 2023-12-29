@@ -27,3 +27,10 @@ table{
 .img{
     width: 200px;
 }
+
+/* TICKET SECTION */
+.button-purchase{
+    position: absolute;
+    bottom: 30px;
+    right: 120px;
+}

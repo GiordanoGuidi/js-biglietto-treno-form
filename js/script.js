@@ -48,7 +48,6 @@ confirmButton.addEventListener('click', function(){
     let price = pricePerKms * kmsValue;
 
     //CALCOLO UN EVENTUALE SCONTO
-     
     if(ageValue === 'minorenne'){
         rateName = 'Tariffa Under 18';
         price = price - ( price / 100 * 20)
@@ -74,6 +73,15 @@ confirmButton.addEventListener('click', function(){
 
      // MOSTRIAMO IL BIGLIETTO
      ticketSection.classList.remove('d-none')
+
+
+    // RECUPERO IL BOTTONE DI ACQUISTO
+    const buttonTicket = document.querySelector('.button-purchase');
+    const alertSuccess = document.querySelector('.alert-success');
+    // EVENT LISTNER SUL BOTTONE DI ACQUISTO
+    buttonTicket.addEventListener('click', function(){
+        ticketSection.classList.add('d-none');
+        alertSuccess.classList.remove('d-none');
+        console.log(alertSuccess);
+    });
 })
-
-
