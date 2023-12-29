@@ -39,6 +39,7 @@ confirmButton.addEventListener('click', function(){
     // SVUOTO I CAMPI
     resetButton.addEventListener('click', function(){
         ticketSection.classList.add('d-none');
+        alertSuccess.classList.add('d-none');
         nameField.value = '';
         kmsField.value = '';
     });
